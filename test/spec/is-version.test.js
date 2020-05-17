@@ -16,11 +16,20 @@ describe('is-version', function () {
     it('12', function () {
       assert.ok(!isVersion('12'));
     });
+    it('0', function () {
+      assert.ok(!isVersion('0'));
+    });
     it('12.0', function () {
       assert.ok(!isVersion('12.0'));
     });
+    it('0.0', function () {
+      assert.ok(!isVersion('0.0'));
+    });
     it('12.0.1', function () {
       assert.ok(!isVersion('12.0.1'));
+    });
+    it('0.0.0', function () {
+      assert.ok(!isVersion('0.0.0'));
     });
     it('v12', function () {
       assert.ok(!isVersion('v12'));
