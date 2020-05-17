@@ -1,4 +1,4 @@
-var isNaN = require('./lib/is-nan');
+var isNaN = require('./lib/isNaN');
 
 module.exports = function isVersion(version) {
   if (version[0] !== 'v') return false;

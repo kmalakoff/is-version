@@ -1,6 +1,6 @@
 ## is-version
 
-Is this value a Node.js version
+Is this value a Node.js version?
 
 ```
 var assert = require('assert');
