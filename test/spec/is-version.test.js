@@ -4,17 +4,29 @@ var isVersion = require('../..');
 
 describe('is-version', function () {
   describe('happy path', function () {
+    it('12.0.1', function () {
+      assert.ok(isVersion('12.0.1'));
+    });
+    it('0.0.0', function () {
+      assert.ok(isVersion('0.0.0'));
+    });
     it('v12.0.1', function () {
-      assert.ok(isVersion('v12.0.1'));
+      assert.ok(isVersion('v12.0.1', 'v'));
     });
     it('v0.0.0', function () {
-      assert.ok(isVersion('v0.0.0'));
+      assert.ok(isVersion('v0.0.0', 'v'));
     });
   });
 
   describe('unhappy path', function () {
+    it('12 number', function () {
+      assert.ok(!isVersion(12));
+    });
     it('12', function () {
       assert.ok(!isVersion('12'));
+    });
+    it('0 number', function () {
+      assert.ok(!isVersion(0));
     });
     it('0', function () {
       assert.ok(!isVersion('0'));
@@ -26,10 +38,16 @@ describe('is-version', function () {
       assert.ok(!isVersion('0.0'));
     });
     it('12.0.1', function () {
-      assert.ok(!isVersion('12.0.1'));
+      assert.ok(!isVersion('12.0.1', 'v'));
     });
     it('0.0.0', function () {
-      assert.ok(!isVersion('0.0.0'));
+      assert.ok(!isVersion('0.0.0', 'v'));
+    });
+    it('v12.0.1', function () {
+      assert.ok(!isVersion('v12.0.1'));
+    });
+    it('v0.0.0', function () {
+      assert.ok(!isVersion('v0.0.0'));
     });
     it('v12', function () {
       assert.ok(!isVersion('v12'));
