@@ -1,76 +1,76 @@
-var assert = require('assert');
+const assert = require('assert');
 
-var isVersion = require('../..');
+const isVersion = require('is-version');
 
-describe('is-version', function () {
-  describe('happy path', function () {
-    it('12.0.1', function () {
+describe('is-version', () => {
+  describe('happy path', () => {
+    it('12.0.1', () => {
       assert.ok(isVersion('12.0.1'));
     });
-    it('0.0.0', function () {
+    it('0.0.0', () => {
       assert.ok(isVersion('0.0.0'));
     });
-    it('v12.0.1', function () {
+    it('v12.0.1', () => {
       assert.ok(isVersion('v12.0.1', 'v'));
     });
-    it('v0.0.0', function () {
+    it('v0.0.0', () => {
       assert.ok(isVersion('v0.0.0', 'v'));
     });
   });
 
-  describe('unhappy path', function () {
-    it('12 number', function () {
+  describe('unhappy path', () => {
+    it('12 number', () => {
       assert.ok(!isVersion(12));
     });
-    it('12', function () {
+    it('12', () => {
       assert.ok(!isVersion('12'));
     });
-    it('0 number', function () {
+    it('0 number', () => {
       assert.ok(!isVersion(0));
     });
-    it('0', function () {
+    it('0', () => {
       assert.ok(!isVersion('0'));
     });
-    it('12.0', function () {
+    it('12.0', () => {
       assert.ok(!isVersion('12.0'));
     });
-    it('0.0', function () {
+    it('0.0', () => {
       assert.ok(!isVersion('0.0'));
     });
-    it('12.0.1', function () {
+    it('12.0.1', () => {
       assert.ok(!isVersion('12.0.1', 'v'));
     });
-    it('0.0.0', function () {
+    it('0.0.0', () => {
       assert.ok(!isVersion('0.0.0', 'v'));
     });
-    it('v12.0.1', function () {
+    it('v12.0.1', () => {
       assert.ok(!isVersion('v12.0.1'));
     });
-    it('v0.0.0', function () {
+    it('v0.0.0', () => {
       assert.ok(!isVersion('v0.0.0'));
     });
-    it('v12', function () {
+    it('v12', () => {
       assert.ok(!isVersion('v12'));
     });
-    it('v12.0', function () {
+    it('v12.0', () => {
       assert.ok(!isVersion('v12.0'));
     });
-    it('va.0.1', function () {
+    it('va.0.1', () => {
       assert.ok(!isVersion('va.0.1'));
     });
-    it('v12a.0.1', function () {
+    it('v12a.0.1', () => {
       assert.ok(!isVersion('v12a.0.1'));
     });
-    it('v12.b.1', function () {
+    it('v12.b.1', () => {
       assert.ok(!isVersion('v12.b.1'));
     });
-    it('v12.0b.1', function () {
+    it('v12.0b.1', () => {
       assert.ok(!isVersion('v12.0b.1'));
     });
-    it('v12.0.c', function () {
+    it('v12.0.c', () => {
       assert.ok(!isVersion('v12.0.c'));
     });
-    it('v12.0.1c', function () {
+    it('v12.0.1c', () => {
       assert.ok(!isVersion('v12.0.1c'));
     });
   });
