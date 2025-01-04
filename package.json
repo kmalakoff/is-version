@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:kmalakoff/is-version.git"
+    "url": "git+ssh://git@github.com/kmalakoff/is-version.git"
   },
   "license": "MIT",
   "main": "dist/cjs/index.cjs",
