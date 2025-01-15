@@ -1,1 +1,1 @@
-ignores: ["@types/*", "is-version", "depcheck", "@biomejs/*"]
+ignores: ["is-version"]
