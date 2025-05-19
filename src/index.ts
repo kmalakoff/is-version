@@ -4,7 +4,7 @@ function isNaN(value) {
   return value !== value;
 }
 
-export default function isVersion(version, prefix) {
+export default function isVersion(version: string, prefix?: string) {
   if (typeof version !== 'string') return false;
 
   if (prefix) {
