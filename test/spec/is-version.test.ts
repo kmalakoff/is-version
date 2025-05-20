@@ -1,6 +1,7 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const isVersion = require('is-version');
+// @ts-ignore
+import isVersion from 'is-version';
 
 describe('is-version', () => {
   describe('happy path', () => {
