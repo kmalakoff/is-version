@@ -1,6 +1,6 @@
 {
   "name": "is-version",
-  "version": "0.2.17",
+  "version": "1.0.0",
   "description": "Is this value a Node.js version?",
   "keywords": [
     "node",
