@@ -21,13 +21,13 @@ describe('is-version', () => {
 
   describe('unhappy path', () => {
     it('12 number', () => {
-      assert.ok(!isVersion(12));
+      assert.ok(!isVersion(12 as unknown as string));
     });
     it('12', () => {
       assert.ok(!isVersion('12'));
     });
     it('0 number', () => {
-      assert.ok(!isVersion(0));
+      assert.ok(!isVersion(0 as unknown as string));
     });
     it('0', () => {
       assert.ok(!isVersion('0'));
