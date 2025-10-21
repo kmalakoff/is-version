@@ -1,6 +1,5 @@
 import assert from 'assert';
 
-// @ts-ignore
 import isVersion from 'is-version';
 
 describe('is-version', () => {
