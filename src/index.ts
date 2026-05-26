@@ -1,5 +1,5 @@
 // biome-ignore lint/suspicious/noShadowRestrictedNames: Legacy
-function isNaN(value) {
+function isNaN(value: number) {
   // biome-ignore lint/suspicious/noSelfCompare: Legacy
   return value !== value;
 }
